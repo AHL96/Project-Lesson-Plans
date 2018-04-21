@@ -12,7 +12,7 @@ The games get harder to make as you go further down the page
 
 # Prior knowledge for projects
 
-- flow control (if, for, while)
+- flow control (if, else, for, while)
 - variables (numbers, strings, lists, tuples, dictionaries)
 - arithmetic (+, -, *, /, //, %)
 - boolean logic (and, or, not, in)
@@ -55,6 +55,9 @@ The games get harder to make as you go further down the page
 - a little searching
 - pygame Group has()
 - pygame groups again
+- pygame LayeredUpdates(), _layer
+- python conventions (underscore before a class variable is the convention for "private")
+- pixel perfect collisions / Masks (more computing power)
 
 
 ___
