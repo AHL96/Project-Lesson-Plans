@@ -1,5 +1,5 @@
 '''
-This file is the begining of every pygame project
+This file is the base of every pygame project
 '''
 import pygame
 import random
