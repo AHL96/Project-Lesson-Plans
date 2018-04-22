@@ -2,8 +2,6 @@
 
 These games are examples of games to make.
 
-The games get harder to make as you go further down the page
-
 [pygame documentation](https://www.pygame.org/docs/)
 
 [free sprites and music to make games with](https://opengameart.org/)
@@ -64,6 +62,11 @@ The games get harder to make as you go further down the page
 - parameter defaulting
 - pygame.key.set_repeat(s,d)
 - enumerate()
+- using text file to design game map
+- smooth motion
+- Camera class
+- .strip()
+- Rect.move()
 
 ___
 ### Games to make
@@ -72,3 +75,5 @@ ___
 - [ ] snake
 - [ ] sudoko
 - [ ] survival game
+- [ ] the game of life
+- [ ] 2048
