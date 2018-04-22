@@ -14,7 +14,7 @@ These games are examples of games to make.
 
 - flow control (if, else, for, while)
 - variables (numbers, strings, lists, tuples, dictionaries)
-- arithmetic (+, -, *, /, //, %)
+- arithmetic (+, -, *, /, //, %, **)
 - boolean logic (and, or, not, in)
 - functions/methods (parameters, return statement)
 - random module
@@ -69,7 +69,8 @@ These games are examples of games to make.
 - Camera class
 - .strip()
 - Rect.move()
-- Trig (helps to know)
+- trigonometry
+- vectors
 
 ___
 ### Games to make
