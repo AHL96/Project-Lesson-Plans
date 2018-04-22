@@ -13,7 +13,7 @@ These games are examples of games to make.
 # Prior knowledge for projects
 
 - flow control (if, else, for, while)
-- variables (numbers, strings, lists, tuples, dictionaries)
+- variables (numbers, strings, lists, tuples, dictionaries, pointers)
 - arithmetic (+, -, *, /, //, %, **)
 - boolean logic (and, or, not, in)
 - functions/methods (parameters, return statement)
