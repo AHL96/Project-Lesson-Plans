@@ -45,7 +45,7 @@ The games get harder to make as you go further down the page
 
 # Platformer (~525 lines)
 
-## **Learn**
+## **Things to Learn**
 - *Math equations* (basic laws of motion; velocity, acceleration, gravity, friction)
 - file organization
 - reading and writing to files
@@ -60,6 +60,10 @@ The games get harder to make as you go further down the page
 - pixel perfect collisions / Masks (more computing power)
 
 # Title-Based Survival game
+## **Things to Learn**
+- parameter defaulting
+- pygame.key.set_repeat(s,d)
+- enumerate()
 
 ___
 ### Games to make

@@ -106,7 +106,7 @@ class Game:
 
         # if player reaches top 1/4 of show_go_screen
         if self.player.rect.top <= HEIGHT / 4:
-            if random.random() < .2:
+            if random.random() < .1:
                 Cloud(self)
             self.player.pos.y += max(abs(self.player.vel.y), 2)
             for cloud in self.clouds:
