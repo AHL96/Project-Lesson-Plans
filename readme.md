@@ -71,6 +71,7 @@ These games are examples of games to make.
 - Rect.move()
 - trigonometry
 - vectors
+- isinstance()
 
 ___
 ### Games to make

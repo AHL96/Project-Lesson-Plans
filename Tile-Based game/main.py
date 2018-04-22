@@ -5,6 +5,26 @@ from settings import *
 from sprites import *
 from tilemap import *
 
+# heads up display (hud)
+
+
+def draw_player_health(surface, x, y, precent):
+    if precent < 0:
+        precent = 0
+    BAR_LENGTH = 100
+    BAR_HEIGHT = 20
+    fill = precent * BAR_LENGTH
+    outline_rect = pg.Rect(x, y, BAR_LENGTH, BAR_HEIGHT)
+    fill_rect = pg.Rect(x, y, fill, BAR_HEIGHT)
+    if precent > 0.6:
+        col = GREEN
+    elif precent > 0.3:
+        col = YELLOW
+    else:
+        col = RED
+    pg.draw.rect(surface, col, fill_rect)
+    pg.draw.rect(surface, WHITE, outline_rect, 2)
+
 
 class Game:
 
@@ -57,9 +77,21 @@ class Game:
     def update(self):
         self.all_sprites.update()
         self.camera.update(self.player)
+        # mobs hit player
+        hits = pg.sprite.spritecollide(
+            self.player, self.mobs, False, collide_hit_rect)
+        for hit in hits:
+            self.player.health -= MOB_DAMAGE
+            hit.vel = vec(0, 0)
+            if self.player.health <= 0:
+                self.playing = False
+        if hits:
+            self.player.pos += vec(MOB_KNOCKBACK, 0).rotate(-hits[0].rot)
+        # bullets hit mobs
         hits = pg.sprite.groupcollide(self.mobs, self.bullets, False, True)
         for hit in hits:
-            hit.kill()
+            hit.health -= BULLET_DAMAGE
+            hit.vel = vec(0, 0)
 
     def draw_grid(self):
         for x in range(0, WIDTH, TILESIZE):
@@ -73,9 +105,14 @@ class Game:
         # self.draw_grid()
         # self.all_sprites.draw(self.screen)
         for sprite in self.all_sprites:
+            if isinstance(sprite, Mob):
+                sprite.draw_health()
             self.screen.blit(sprite.image, self.camera.apply(sprite))
         # pg.draw.rect(self.screen, WHITE, self.camera.apply(self.player), 2)
         # pg.draw.rect(self.screen, WHITE, self.player.hit_rect, 2)
+
+        draw_player_health(self.screen, 10, 10,
+                           self.player.health/PLAYER_HEALTH)
         pg.display.flip()
 
     def events(self):
