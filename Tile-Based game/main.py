@@ -18,14 +18,14 @@ class Game:
 
     def load_data(self):
         game_folder = path.dirname(__file__)
+        img_folder = path.join(game_folder, 'img')
         self.map = Map(path.join(game_folder, 'map.txt'))
+        self.player_img = pg.image.load(
+            path.join(img_folder, PLAYER_IMG)).convert_alpha()
 
     def new(self):
         self.all_sprites = pg.sprite.Group()
         self.walls = pg.sprite.Group()
-        # self.player = Player(self, 10, 10)
-        # for x in range(10, 20):
-        #     Wall(self, x, 5)
         for row, tiles in enumerate(self.map.data):
             for col, tile in enumerate(tiles):
                 if tile == '1':
@@ -62,6 +62,8 @@ class Game:
         # self.all_sprites.draw(self.screen)
         for sprite in self.all_sprites:
             self.screen.blit(sprite.image, self.camera.apply(sprite))
+        # pg.draw.rect(self.screen, WHITE, self.camera.apply(self.player), 2)
+        # pg.draw.rect(self.screen, WHITE, self.player.hit_rect, 2)
         pg.display.flip()
 
     def events(self):
@@ -71,15 +73,6 @@ class Game:
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     self.quit()
-
-                # if event.key == pg.K_LEFT:
-                #     self.player.move(dx=-1)
-                # if event.key == pg.K_RIGHT:
-                #     self.player.move(dx=1)
-                # if event.key == pg.K_UP:
-                #     self.player.move(dy=-1)
-                # if event.key == pg.K_DOWN:
-                #     self.player.move(dy=1)
 
     def show_start_screen(self):
         pass

@@ -6,6 +6,8 @@ These games are examples of games to make.
 
 [free sprites and music to make games with](https://opengameart.org/)
 
+[More sprites](http://kenney.nl/)
+
 [make sound effects](https://www.bfxr.net/)
 
 # Prior knowledge for projects
@@ -67,6 +69,7 @@ These games are examples of games to make.
 - Camera class
 - .strip()
 - Rect.move()
+- Trig (helps to know)
 
 ___
 ### Games to make
@@ -74,6 +77,6 @@ ___
 - [ ] flappy bird
 - [ ] snake
 - [ ] sudoko
-- [ ] survival game
+- [ ] survival game (bird eye and profile)
 - [ ] the game of life
 - [ ] 2048
