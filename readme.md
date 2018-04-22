@@ -24,7 +24,7 @@ The games get harder to make as you go further down the page
 - XY coordinates
 - collisions
 
-# Space Shooter
+# Space Shooter (~400 lines)
 
 ## **Things to Stress**
 
@@ -43,10 +43,10 @@ The games get harder to make as you go further down the page
 - basic terminal usage
 
 
-# Platformer
+# Platformer (~525 lines)
 
 ## **Learn**
-- *Math equations (basic laws of motion)*
+- *Math equations* (basic laws of motion; velocity, acceleration, gravity, friction)
 - file organization
 - reading and writing to files
 - sprite sheets
@@ -59,6 +59,7 @@ The games get harder to make as you go further down the page
 - python conventions (underscore before a class variable is the convention for "private")
 - pixel perfect collisions / Masks (more computing power)
 
+# Title-Based Survival game
 
 ___
 ### Games to make
