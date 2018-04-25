@@ -2,6 +2,7 @@ import pygame as pg
 import random
 from settings import *
 from tilemap import collide_hit_rect
+import math
 
 vec = pg.math.Vector2
 
@@ -79,6 +80,11 @@ class Player(pg.sprite.Sprite):
         self.hit_rect.centery = self.pos.y
         collide_with_walls(self, self.game.walls, 'y')
         self.rect.center = self.hit_rect.center
+
+    def add_health(self, amount):
+        self.health += amount
+        if self.health > PLAYER_HEALTH:
+            self.health = PLAYER_HEALTH
 
 
 class Bullet(pg.sprite.Sprite):
@@ -195,3 +201,24 @@ class MuzzleFlash(pg.sprite.Sprite):
     def update(self):
         if pg.time.get_ticks() - self.spawn_time > FLASH_DURATION:
             self.kill()
+
+
+class Item(pg.sprite.Sprite):
+    def __init__(self, game, pos, t):
+        self._layer = ITEM_LAYER
+        self.groups = game.all_sprites, game.items
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        self.image = pg.Surface((20, 20))
+        self.image.fill(RED)
+        self.rect = self.image.get_rect()
+        self.type = t
+        self.pos = pos
+        self.rect.center = pos
+        self.step = 0
+
+    def update(self):
+        # bobbing motion
+        offset = BOB_RANGE * (math.sin(self.step / BOB_RANGE))
+        self.rect.centery = self.pos.y + offset
+        self.step += BOB_SPEED

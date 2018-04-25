@@ -1,0 +1,281 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+main.py	../Platformer/main.py	1;"	kind:file	line:1
+pg	../Platformer/main.py	/^import pygame as pg$/;"	kind:namespace	line:1
+random	../Platformer/main.py	/^import random$/;"	kind:namespace	line:2
+path	../Platformer/main.py	/^from os import path$/;"	kind:namespace	line:5
+Game	../Platformer/main.py	/^class Game:$/;"	kind:class	line:8
+__init__	../Platformer/main.py	/^    def __init__(self):$/;"	kind:member	line:10
+load_data	../Platformer/main.py	/^    def load_data(self):$/;"	kind:member	line:20
+new	../Platformer/main.py	/^    def new(self):$/;"	kind:member	line:47
+run	../Platformer/main.py	/^    def run(self):$/;"	kind:member	line:68
+update	../Platformer/main.py	/^    def update(self):$/;"	kind:member	line:78
+events	../Platformer/main.py	/^    def events(self):$/;"	kind:member	line:150
+draw	../Platformer/main.py	/^    def draw(self):$/;"	kind:member	line:165
+show_start_screen	../Platformer/main.py	/^    def show_start_screen(self):$/;"	kind:member	line:172
+show_go_screen	../Platformer/main.py	/^    def show_go_screen(self):$/;"	kind:member	line:187
+wait_for_key	../Platformer/main.py	/^    def wait_for_key(self):$/;"	kind:member	line:211
+draw_text	../Platformer/main.py	/^    def draw_text(self, text, size, color, x, y):$/;"	kind:member	line:222
+g	../Platformer/main.py	/^g = Game()$/;"	kind:variable	line:230
+settings.py	../Platformer/settings.py	1;"	kind:file	line:1
+TITLE	../Platformer/settings.py	/^TITLE = "Jumper"$/;"	kind:variable	line:3
+WIDTH	../Platformer/settings.py	/^WIDTH = 480$/;"	kind:variable	line:4
+HEIGHT	../Platformer/settings.py	/^HEIGHT = 600$/;"	kind:variable	line:5
+FPS	../Platformer/settings.py	/^FPS = 60$/;"	kind:variable	line:6
+HS_FILE	../Platformer/settings.py	/^HS_FILE = 'highscore.txt'$/;"	kind:variable	line:8
+SPRITESHEET	../Platformer/settings.py	/^SPRITESHEET = 'spritesheet_jumper.png'$/;"	kind:variable	line:9
+PLAYER_ACC	../Platformer/settings.py	/^PLAYER_ACC = 1$/;"	kind:variable	line:12
+FRICTION	../Platformer/settings.py	/^FRICTION = -0.10$/;"	kind:variable	line:13
+GRAVITY	../Platformer/settings.py	/^GRAVITY = .9$/;"	kind:variable	line:14
+PLAYER_JUMP	../Platformer/settings.py	/^PLAYER_JUMP = 20$/;"	kind:variable	line:15
+BOOST_POWER	../Platformer/settings.py	/^BOOST_POWER = 60$/;"	kind:variable	line:18
+POW_SPAWN_PCT	../Platformer/settings.py	/^POW_SPAWN_PCT = .1$/;"	kind:variable	line:19
+MOB_FREQ	../Platformer/settings.py	/^MOB_FREQ = 5000$/;"	kind:variable	line:20
+PLAYER_LAYER	../Platformer/settings.py	/^PLAYER_LAYER = 2$/;"	kind:variable	line:21
+PLATFORM_LAYER	../Platformer/settings.py	/^PLATFORM_LAYER = 1$/;"	kind:variable	line:22
+POW_LAYER	../Platformer/settings.py	/^POW_LAYER = 1$/;"	kind:variable	line:23
+MOB_LAYER	../Platformer/settings.py	/^MOB_LAYER = 2$/;"	kind:variable	line:24
+CLOUD_LAYER	../Platformer/settings.py	/^CLOUD_LAYER = 0$/;"	kind:variable	line:25
+PLATFORM_LIST	../Platformer/settings.py	/^PLATFORM_LIST = [$/;"	kind:variable	line:35
+WHITE	../Platformer/settings.py	/^WHITE = (255, 255, 255)$/;"	kind:variable	line:44
+BLACK	../Platformer/settings.py	/^BLACK = (0, 0, 0)$/;"	kind:variable	line:45
+RED	../Platformer/settings.py	/^RED = (255, 0, 0)$/;"	kind:variable	line:46
+GREEN	../Platformer/settings.py	/^GREEN = (0, 255, 0)$/;"	kind:variable	line:47
+BLUE	../Platformer/settings.py	/^BLUE = (0, 0, 255)$/;"	kind:variable	line:48
+YELLOW	../Platformer/settings.py	/^YELLOW = (255, 255, 0)$/;"	kind:variable	line:49
+LIGHTBLUE	../Platformer/settings.py	/^LIGHTBLUE = (0, 155, 155)$/;"	kind:variable	line:50
+BGCOLOR	../Platformer/settings.py	/^BGCOLOR = LIGHTBLUE$/;"	kind:variable	line:52
+Sprites.py	../Platformer/Sprites.py	1;"	kind:file	line:1
+pg	../Platformer/Sprites.py	/^import pygame as pg$/;"	kind:namespace	line:3
+random	../Platformer/Sprites.py	/^import random$/;"	kind:namespace	line:4
+vec	../Platformer/Sprites.py	/^vec = pg.math.Vector2$/;"	kind:variable	line:6
+Spritesheet	../Platformer/Sprites.py	/^class Spritesheet:$/;"	kind:class	line:9
+__init__	../Platformer/Sprites.py	/^    def __init__(self, filename):$/;"	kind:member	line:12
+get_image	../Platformer/Sprites.py	/^    def get_image(self, x, y, width, height):$/;"	kind:member	line:15
+Player	../Platformer/Sprites.py	/^class Player(pg.sprite.Sprite):$/;"	kind:class	line:22
+__init__	../Platformer/Sprites.py	/^    def __init__(self, game):$/;"	kind:member	line:23
+load_images	../Platformer/Sprites.py	/^    def load_images(self):$/;"	kind:member	line:44
+jump_cut	../Platformer/Sprites.py	/^    def jump_cut(self):$/;"	kind:member	line:65
+jump	../Platformer/Sprites.py	/^    def jump(self):$/;"	kind:member	line:70
+update	../Platformer/Sprites.py	/^    def update(self):$/;"	kind:member	line:78
+animate	../Platformer/Sprites.py	/^    def animate(self):$/;"	kind:member	line:104
+Platform	../Platformer/Sprites.py	/^class Platform(pg.sprite.Sprite):$/;"	kind:class	line:140
+__init__	../Platformer/Sprites.py	/^    def __init__(self, game, x, y):$/;"	kind:member	line:141
+Pow	../Platformer/Sprites.py	/^class Pow(pg.sprite.Sprite):$/;"	kind:class	line:161
+__init__	../Platformer/Sprites.py	/^    def __init__(self, game, plat):$/;"	kind:member	line:162
+update	../Platformer/Sprites.py	/^    def update(self):$/;"	kind:member	line:175
+Mob	../Platformer/Sprites.py	/^class Mob(pg.sprite.Sprite):$/;"	kind:class	line:182
+__init__	../Platformer/Sprites.py	/^    def __init__(self, game):$/;"	kind:member	line:183
+update	../Platformer/Sprites.py	/^    def update(self):$/;"	kind:member	line:202
+Cloud	../Platformer/Sprites.py	/^class Cloud(pg.sprite.Sprite):$/;"	kind:class	line:220
+__init__	../Platformer/Sprites.py	/^    def __init__(self, game):$/;"	kind:member	line:221
+update	../Platformer/Sprites.py	/^    def update(self):$/;"	kind:member	line:235
+Space Shooter.py	../Space Shooter/Space Shooter.py	1;"	kind:file	line:1
+pygame	../Space Shooter/Space Shooter.py	/^import pygame$/;"	kind:namespace	line:1
+random	../Space Shooter/Space Shooter.py	/^import random$/;"	kind:namespace	line:2
+path	../Space Shooter/Space Shooter.py	/^from os import path$/;"	kind:namespace	line:3
+game_dir	../Space Shooter/Space Shooter.py	/^game_dir = path.dirname(__file__)$/;"	kind:variable	line:6
+img_dir	../Space Shooter/Space Shooter.py	/^img_dir = path.join(game_dir, "img")$/;"	kind:variable	line:7
+sound_dir	../Space Shooter/Space Shooter.py	/^sound_dir = path.join(game_dir, "snd")$/;"	kind:variable	line:8
+WIDTH	../Space Shooter/Space Shooter.py	/^WIDTH = 480$/;"	kind:variable	line:10
+HEIGHT	../Space Shooter/Space Shooter.py	/^HEIGHT = 600$/;"	kind:variable	line:11
+FPS	../Space Shooter/Space Shooter.py	/^FPS = 60$/;"	kind:variable	line:12
+POWER_TIME	../Space Shooter/Space Shooter.py	/^POWER_TIME = 5000  # in milliseconds$/;"	kind:variable	line:13
+WHITE	../Space Shooter/Space Shooter.py	/^WHITE = (255, 255, 255)$/;"	kind:variable	line:16
+BLACK	../Space Shooter/Space Shooter.py	/^BLACK = (0, 0, 0)$/;"	kind:variable	line:17
+RED	../Space Shooter/Space Shooter.py	/^RED = (255, 0, 0)$/;"	kind:variable	line:18
+GREEN	../Space Shooter/Space Shooter.py	/^GREEN = (0, 255, 0)$/;"	kind:variable	line:19
+BLUE	../Space Shooter/Space Shooter.py	/^BLUE = (0, 0, 255)$/;"	kind:variable	line:20
+YELLOW	../Space Shooter/Space Shooter.py	/^YELLOW = (255, 255, 0)$/;"	kind:variable	line:21
+screen	../Space Shooter/Space Shooter.py	/^screen = pygame.display.set_mode((WIDTH, HEIGHT))$/;"	kind:variable	line:26
+clock	../Space Shooter/Space Shooter.py	/^clock = pygame.time.Clock()$/;"	kind:variable	line:28
+font_name	../Space Shooter/Space Shooter.py	/^font_name = pygame.font.get_default_font()$/;"	kind:variable	line:30
+draw_text	../Space Shooter/Space Shooter.py	/^def draw_text(surface, text, size, x, y):$/;"	kind:function	line:35
+new_meteor	../Space Shooter/Space Shooter.py	/^def new_meteor():$/;"	kind:function	line:43
+draw_shield_bar	../Space Shooter/Space Shooter.py	/^def draw_shield_bar(surface, x, y, precent):$/;"	kind:function	line:49
+draw_lives	../Space Shooter/Space Shooter.py	/^def draw_lives(surface, x, y, lives, img):$/;"	kind:function	line:61
+show_go_screen	../Space Shooter/Space Shooter.py	/^def show_go_screen():$/;"	kind:function	line:69
+Player	../Space Shooter/Space Shooter.py	/^class Player(pygame.sprite.Sprite):$/;"	kind:class	line:86
+__init__	../Space Shooter/Space Shooter.py	/^    def __init__(self):$/;"	kind:member	line:88
+powerup	../Space Shooter/Space Shooter.py	/^    def powerup(self):$/;"	kind:member	line:110
+update	../Space Shooter/Space Shooter.py	/^    def update(self):$/;"	kind:member	line:114
+shoot	../Space Shooter/Space Shooter.py	/^    def shoot(self):$/;"	kind:member	line:140
+hide	../Space Shooter/Space Shooter.py	/^    def hide(self):$/;"	kind:member	line:161
+Meteor	../Space Shooter/Space Shooter.py	/^class Meteor(pygame.sprite.Sprite):$/;"	kind:class	line:168
+__init__	../Space Shooter/Space Shooter.py	/^    def __init__(self):$/;"	kind:member	line:169
+rotate	../Space Shooter/Space Shooter.py	/^    def rotate(self):$/;"	kind:member	line:187
+update	../Space Shooter/Space Shooter.py	/^    def update(self):$/;"	kind:member	line:198
+Bullet	../Space Shooter/Space Shooter.py	/^class Bullet(pygame.sprite.Sprite):$/;"	kind:class	line:209
+__init__	../Space Shooter/Space Shooter.py	/^    def __init__(self, x, y):$/;"	kind:member	line:210
+update	../Space Shooter/Space Shooter.py	/^    def update(self):$/;"	kind:member	line:220
+PowerUp	../Space Shooter/Space Shooter.py	/^class PowerUp(pygame.sprite.Sprite):$/;"	kind:class	line:227
+__init__	../Space Shooter/Space Shooter.py	/^    def __init__(self, center):$/;"	kind:member	line:228
+update	../Space Shooter/Space Shooter.py	/^    def update(self):$/;"	kind:member	line:237
+Explosion	../Space Shooter/Space Shooter.py	/^class Explosion(pygame.sprite.Sprite):$/;"	kind:class	line:244
+__init__	../Space Shooter/Space Shooter.py	/^    def __init__(self, center, size):$/;"	kind:member	line:245
+update	../Space Shooter/Space Shooter.py	/^    def update(self):$/;"	kind:member	line:255
+background	../Space Shooter/Space Shooter.py	/^background = pygame.image.load($/;"	kind:variable	line:269
+background	../Space Shooter/Space Shooter.py	/^background = pygame.transform.scale(background, (WIDTH, HEIGHT))$/;"	kind:variable	line:271
+background_rect	../Space Shooter/Space Shooter.py	/^background_rect = background.get_rect()$/;"	kind:variable	line:272
+player_img	../Space Shooter/Space Shooter.py	/^player_img = pygame.image.load(path.join(img_dir, "player.png")).convert()$/;"	kind:variable	line:273
+player_mini_img	../Space Shooter/Space Shooter.py	/^player_mini_img = pygame.transform.scale(player_img, (25, 19))$/;"	kind:variable	line:274
+laser_img	../Space Shooter/Space Shooter.py	/^laser_img = pygame.image.load(path.join(img_dir, "laserGreen.png")).convert()$/;"	kind:variable	line:276
+meteor_images	../Space Shooter/Space Shooter.py	/^meteor_images = []$/;"	kind:variable	line:277
+meteor_list	../Space Shooter/Space Shooter.py	/^meteor_list = [$/;"	kind:variable	line:278
+explosion_anim	../Space Shooter/Space Shooter.py	/^explosion_anim = {}$/;"	kind:variable	line:292
+filename	../Space Shooter/Space Shooter.py	/^    filename = 'regularExplosion0{}.png'.format(i)$/;"	kind:variable	line:297
+img	../Space Shooter/Space Shooter.py	/^    img = pygame.image.load(path.join(img_dir, filename))$/;"	kind:variable	line:298
+img_lg	../Space Shooter/Space Shooter.py	/^    img_lg = pygame.transform.scale(img, (75, 75))$/;"	kind:variable	line:300
+img_sm	../Space Shooter/Space Shooter.py	/^    img_sm = pygame.transform.scale(img, (32, 32))$/;"	kind:variable	line:302
+filename	../Space Shooter/Space Shooter.py	/^    filename = 'sonicExplosion0{}.png'.format(i)$/;"	kind:variable	line:304
+img	../Space Shooter/Space Shooter.py	/^    img = pygame.image.load(path.join(img_dir, filename)).convert()$/;"	kind:variable	line:305
+powerup_imgs	../Space Shooter/Space Shooter.py	/^powerup_imgs = {}$/;"	kind:variable	line:308
+shoot_sound	../Space Shooter/Space Shooter.py	/^shoot_sound = pygame.mixer.Sound(path.join(sound_dir, 'laser.wav'))$/;"	kind:variable	line:319
+explosion_sound	../Space Shooter/Space Shooter.py	/^explosion_sound = pygame.mixer.Sound(path.join(sound_dir, 'explosion.wav'))$/;"	kind:variable	line:320
+all_sprites	../Space Shooter/Space Shooter.py	/^all_sprites = pygame.sprite.Group()$/;"	kind:variable	line:326
+meteors	../Space Shooter/Space Shooter.py	/^meteors = pygame.sprite.Group()$/;"	kind:variable	line:327
+bullets	../Space Shooter/Space Shooter.py	/^bullets = pygame.sprite.Group()$/;"	kind:variable	line:328
+powerups	../Space Shooter/Space Shooter.py	/^powerups = pygame.sprite.Group()$/;"	kind:variable	line:329
+player	../Space Shooter/Space Shooter.py	/^player = Player()$/;"	kind:variable	line:330
+score	../Space Shooter/Space Shooter.py	/^score = 0$/;"	kind:variable	line:335
+game_over	../Space Shooter/Space Shooter.py	/^game_over = True$/;"	kind:variable	line:339
+running	../Space Shooter/Space Shooter.py	/^running = True$/;"	kind:variable	line:340
+hits	../Space Shooter/Space Shooter.py	/^    hits = pygame.sprite.groupcollide(meteors, bullets, True, True)$/;"	kind:variable	line:372
+hits	../Space Shooter/Space Shooter.py	/^    hits = pygame.sprite.spritecollide($/;"	kind:variable	line:385
+hits	../Space Shooter/Space Shooter.py	/^    hits = pygame.sprite.spritecollide(player, powerups, True)$/;"	kind:variable	line:403
+starting.py	../starting.py	1;"	kind:file	line:1
+pygame	../starting.py	/^import pygame$/;"	kind:namespace	line:4
+random	../starting.py	/^import random$/;"	kind:namespace	line:5
+os	../starting.py	/^import os$/;"	kind:namespace	line:6
+WIDTH	../starting.py	/^WIDTH = 480$/;"	kind:variable	line:8
+HEIGHT	../starting.py	/^HEIGHT = 600$/;"	kind:variable	line:9
+FPS	../starting.py	/^FPS = 60$/;"	kind:variable	line:10
+WHITE	../starting.py	/^WHITE = (255, 255, 255)$/;"	kind:variable	line:13
+BLACK	../starting.py	/^BLACK = (0, 0, 0)$/;"	kind:variable	line:14
+RED	../starting.py	/^RED = (255, 0, 0)$/;"	kind:variable	line:15
+GREEN	../starting.py	/^GREEN = (0, 255, 0)$/;"	kind:variable	line:16
+BLUE	../starting.py	/^BLUE = (0, 0, 255)$/;"	kind:variable	line:17
+game_folder	../starting.py	/^game_folder = os.path.dirname(__file__)$/;"	kind:variable	line:20
+img_folder	../starting.py	/^img_folder = os.path.join(game_folder, "img")$/;"	kind:variable	line:21
+screen	../starting.py	/^screen = pygame.display.set_mode((WIDTH, HEIGHT))$/;"	kind:variable	line:26
+clock	../starting.py	/^clock = pygame.time.Clock()$/;"	kind:variable	line:28
+all_sprites	../starting.py	/^all_sprites = pygame.sprite.Group()$/;"	kind:variable	line:30
+running	../starting.py	/^running = True$/;"	kind:variable	line:33
+running	../starting.py	/^            running = False$/;"	kind:variable	line:40
+main.py	../Tile-Based game/main.py	1;"	kind:file	line:1
+pg	../Tile-Based game/main.py	/^import pygame as pg$/;"	kind:namespace	line:1
+sys	../Tile-Based game/main.py	/^import sys$/;"	kind:namespace	line:2
+path	../Tile-Based game/main.py	/^from os import path$/;"	kind:namespace	line:3
+draw_player_health	../Tile-Based game/main.py	/^def draw_player_health(surface, x, y, precent):$/;"	kind:function	line:9
+Game	../Tile-Based game/main.py	/^class Game:$/;"	kind:class	line:28
+__init__	../Tile-Based game/main.py	/^    def __init__(self):$/;"	kind:member	line:30
+load_data	../Tile-Based game/main.py	/^    def load_data(self):$/;"	kind:member	line:38
+new	../Tile-Based game/main.py	/^    def new(self):$/;"	kind:member	line:60
+run	../Tile-Based game/main.py	/^    def run(self):$/;"	kind:member	line:81
+quit	../Tile-Based game/main.py	/^    def quit(self):$/;"	kind:member	line:89
+update	../Tile-Based game/main.py	/^    def update(self):$/;"	kind:member	line:93
+draw_grid	../Tile-Based game/main.py	/^    def draw_grid(self):$/;"	kind:member	line:118
+draw	../Tile-Based game/main.py	/^    def draw(self):$/;"	kind:member	line:124
+events	../Tile-Based game/main.py	/^    def events(self):$/;"	kind:member	line:150
+show_start_screen	../Tile-Based game/main.py	/^    def show_start_screen(self):$/;"	kind:member	line:160
+show_go_screen	../Tile-Based game/main.py	/^    def show_go_screen(self):$/;"	kind:member	line:163
+g	../Tile-Based game/main.py	/^g = Game()$/;"	kind:variable	line:167
+settings.py	../Tile-Based game/settings.py	1;"	kind:file	line:1
+pg	../Tile-Based game/settings.py	/^import pygame as pg$/;"	kind:namespace	line:1
+vec	../Tile-Based game/settings.py	/^vec = pg.math.Vector2$/;"	kind:variable	line:2
+WHITE	../Tile-Based game/settings.py	/^WHITE = (255, 255, 255)$/;"	kind:variable	line:5
+BLACK	../Tile-Based game/settings.py	/^BLACK = (0, 0, 0)$/;"	kind:variable	line:6
+DARKGREY	../Tile-Based game/settings.py	/^DARKGREY = (40, 40, 40)$/;"	kind:variable	line:7
+LIGHTGREY	../Tile-Based game/settings.py	/^LIGHTGREY = (100, 100, 100)$/;"	kind:variable	line:8
+GREEN	../Tile-Based game/settings.py	/^GREEN = (0, 255, 0)$/;"	kind:variable	line:9
+RED	../Tile-Based game/settings.py	/^RED = (255, 0, 0)$/;"	kind:variable	line:10
+YELLOW	../Tile-Based game/settings.py	/^YELLOW = (255, 255, 0)$/;"	kind:variable	line:11
+BROWN	../Tile-Based game/settings.py	/^BROWN = (186, 55, 5)$/;"	kind:variable	line:12
+CYAN	../Tile-Based game/settings.py	/^CYAN = (0, 255, 255)$/;"	kind:variable	line:13
+TILESIZE	../Tile-Based game/settings.py	/^TILESIZE = 64$/;"	kind:variable	line:16
+WIDTH	../Tile-Based game/settings.py	/^WIDTH = TILESIZE * 16  # multiple of TILESIZE$/;"	kind:variable	line:17
+HEIGHT	../Tile-Based game/settings.py	/^HEIGHT = TILESIZE * 10  # multiple of TILESIZE$/;"	kind:variable	line:18
+FPS	../Tile-Based game/settings.py	/^FPS = 60$/;"	kind:variable	line:19
+TITLE	../Tile-Based game/settings.py	/^TITLE = 'Tilemap Demo'$/;"	kind:variable	line:20
+BGCOLOR	../Tile-Based game/settings.py	/^BGCOLOR = BROWN$/;"	kind:variable	line:21
+GRIDWIDTH	../Tile-Based game/settings.py	/^GRIDWIDTH = WIDTH \/ TILESIZE$/;"	kind:variable	line:23
+GRIDHEIGHT	../Tile-Based game/settings.py	/^GRIDHEIGHT = HEIGHT \/ TILESIZE$/;"	kind:variable	line:24
+PLAYER_SPEED	../Tile-Based game/settings.py	/^PLAYER_SPEED = 300$/;"	kind:variable	line:27
+PLAYER_ROT_SPEED	../Tile-Based game/settings.py	/^PLAYER_ROT_SPEED = 250$/;"	kind:variable	line:28
+PLAYER_IMG	../Tile-Based game/settings.py	/^PLAYER_IMG = 'manBlue_gun.png'$/;"	kind:variable	line:29
+PLAYER_HIT_RECT	../Tile-Based game/settings.py	/^PLAYER_HIT_RECT = pg.Rect(0, 0, 35, 35)$/;"	kind:variable	line:30
+BARREL_OFFSET	../Tile-Based game/settings.py	/^BARREL_OFFSET = vec(30, 10)$/;"	kind:variable	line:31
+PLAYER_HEALTH	../Tile-Based game/settings.py	/^PLAYER_HEALTH = 100$/;"	kind:variable	line:32
+BULLET_IMG	../Tile-Based game/settings.py	/^BULLET_IMG = 'bullet.png'$/;"	kind:variable	line:35
+BULLET_SPEED	../Tile-Based game/settings.py	/^BULLET_SPEED = 500$/;"	kind:variable	line:36
+BULLET_LIFETIME	../Tile-Based game/settings.py	/^BULLET_LIFETIME = 1000$/;"	kind:variable	line:37
+BULLET_RATE	../Tile-Based game/settings.py	/^BULLET_RATE = 150$/;"	kind:variable	line:38
+KICKBACK	../Tile-Based game/settings.py	/^KICKBACK = 200$/;"	kind:variable	line:39
+GUN_SPREAD	../Tile-Based game/settings.py	/^GUN_SPREAD = 5$/;"	kind:variable	line:40
+BULLET_DAMAGE	../Tile-Based game/settings.py	/^BULLET_DAMAGE = 10$/;"	kind:variable	line:41
+BULLET_HIT_RECT	../Tile-Based game/settings.py	/^BULLET_HIT_RECT = pg.Rect(0, 0, 20, 20)$/;"	kind:variable	line:42
+MOB_IMG	../Tile-Based game/settings.py	/^MOB_IMG = 'zombie1_hold.png'$/;"	kind:variable	line:45
+MOB_SPEEDS	../Tile-Based game/settings.py	/^MOB_SPEEDS = [150, 100, 75, 125]$/;"	kind:variable	line:46
+MOB_HIT_RECT	../Tile-Based game/settings.py	/^MOB_HIT_RECT = pg.Rect(0, 0, 30, 30)$/;"	kind:variable	line:47
+MOB_HEALTH	../Tile-Based game/settings.py	/^MOB_HEALTH = 100$/;"	kind:variable	line:48
+MOB_DAMAGE	../Tile-Based game/settings.py	/^MOB_DAMAGE = 10$/;"	kind:variable	line:49
+MOB_KNOCKBACK	../Tile-Based game/settings.py	/^MOB_KNOCKBACK = 20$/;"	kind:variable	line:50
+AVOID_RADIUS	../Tile-Based game/settings.py	/^AVOID_RADIUS = 50$/;"	kind:variable	line:51
+MUZZLE_FLASHES	../Tile-Based game/settings.py	/^MUZZLE_FLASHES = ['whitePuff15.png', 'whitePuff16.png',$/;"	kind:variable	line:55
+FLASH_DURATION	../Tile-Based game/settings.py	/^FLASH_DURATION = 40$/;"	kind:variable	line:57
+ITEM_LAYER	../Tile-Based game/settings.py	/^ITEM_LAYER = 1$/;"	kind:variable	line:60
+PLAYER_LAYER	../Tile-Based game/settings.py	/^PLAYER_LAYER = 2$/;"	kind:variable	line:61
+MOB_LAYER	../Tile-Based game/settings.py	/^MOB_LAYER = 2$/;"	kind:variable	line:62
+BULLET_LAYER	../Tile-Based game/settings.py	/^BULLET_LAYER = 3$/;"	kind:variable	line:63
+EFFECTS_LAYER	../Tile-Based game/settings.py	/^EFFECTS_LAYER = 4$/;"	kind:variable	line:64
+ITEM_IMAGES	../Tile-Based game/settings.py	/^ITEM_IMAGES = {$/;"	kind:variable	line:67
+HEALTH_PACK_AMOUNT	../Tile-Based game/settings.py	/^HEALTH_PACK_AMOUNT = 20$/;"	kind:variable	line:70
+BOB_RANGE	../Tile-Based game/settings.py	/^BOB_RANGE = 10$/;"	kind:variable	line:71
+BOB_SPEED	../Tile-Based game/settings.py	/^BOB_SPEED = 0.6$/;"	kind:variable	line:72
+sprites.py	../Tile-Based game/sprites.py	1;"	kind:file	line:1
+pg	../Tile-Based game/sprites.py	/^import pygame as pg$/;"	kind:namespace	line:1
+random	../Tile-Based game/sprites.py	/^import random$/;"	kind:namespace	line:2
+collide_hit_rect	../Tile-Based game/sprites.py	/^from tilemap import collide_hit_rect$/;"	kind:namespace	line:4
+math	../Tile-Based game/sprites.py	/^import math$/;"	kind:namespace	line:5
+vec	../Tile-Based game/sprites.py	/^vec = pg.math.Vector2$/;"	kind:variable	line:7
+collide_with_walls	../Tile-Based game/sprites.py	/^def collide_with_walls(sprite, group, direction):$/;"	kind:function	line:10
+Player	../Tile-Based game/sprites.py	/^class Player(pg.sprite.Sprite):$/;"	kind:class	line:32
+__init__	../Tile-Based game/sprites.py	/^    def __init__(self, game, x, y):$/;"	kind:member	line:33
+get_keys	../Tile-Based game/sprites.py	/^    def get_keys(self):$/;"	kind:member	line:49
+update	../Tile-Based game/sprites.py	/^    def update(self):$/;"	kind:member	line:71
+add_health	../Tile-Based game/sprites.py	/^    def add_health(self, amount):$/;"	kind:member	line:84
+Bullet	../Tile-Based game/sprites.py	/^class Bullet(pg.sprite.Sprite):$/;"	kind:class	line:90
+__init__	../Tile-Based game/sprites.py	/^    def __init__(self, game, pos, direction):$/;"	kind:member	line:91
+update	../Tile-Based game/sprites.py	/^    def update(self):$/;"	kind:member	line:105
+Mob	../Tile-Based game/sprites.py	/^class Mob(pg.sprite.Sprite):$/;"	kind:class	line:115
+__init__	../Tile-Based game/sprites.py	/^    def __init__(self, game, x, y):$/;"	kind:member	line:116
+avoid_mobs	../Tile-Based game/sprites.py	/^    def avoid_mobs(self):$/;"	kind:member	line:134
+update	../Tile-Based game/sprites.py	/^    def update(self):$/;"	kind:member	line:141
+draw_health	../Tile-Based game/sprites.py	/^    def draw_health(self):$/;"	kind:member	line:161
+Obstacle	../Tile-Based game/sprites.py	/^class Obstacle(pg.sprite.Sprite):$/;"	kind:class	line:174
+__init__	../Tile-Based game/sprites.py	/^    def __init__(self, game, x, y, w, h):$/;"	kind:member	line:175
+MuzzleFlash	../Tile-Based game/sprites.py	/^class MuzzleFlash(pg.sprite.Sprite):$/;"	kind:class	line:186
+__init__	../Tile-Based game/sprites.py	/^    def __init__(self, game, pos):$/;"	kind:member	line:188
+update	../Tile-Based game/sprites.py	/^    def update(self):$/;"	kind:member	line:201
+Item	../Tile-Based game/sprites.py	/^class Item(pg.sprite.Sprite):$/;"	kind:class	line:206
+__init__	../Tile-Based game/sprites.py	/^    def __init__(self, game, pos, t):$/;"	kind:member	line:207
+update	../Tile-Based game/sprites.py	/^    def update(self):$/;"	kind:member	line:220
+tilemap.py	../Tile-Based game/tilemap.py	1;"	kind:file	line:1
+pg	../Tile-Based game/tilemap.py	/^import pygame as pg$/;"	kind:namespace	line:2
+pytmx	../Tile-Based game/tilemap.py	/^import pytmx$/;"	kind:namespace	line:3
+collide_hit_rect	../Tile-Based game/tilemap.py	/^def collide_hit_rect(one, two):$/;"	kind:function	line:7
+Map	../Tile-Based game/tilemap.py	/^class Map:$/;"	kind:class	line:11
+__init__	../Tile-Based game/tilemap.py	/^    def __init__(self, filename):$/;"	kind:member	line:12
+TiledMap	../Tile-Based game/tilemap.py	/^class TiledMap:$/;"	kind:class	line:24
+__init__	../Tile-Based game/tilemap.py	/^    def __init__(self, filename):$/;"	kind:member	line:25
+render	../Tile-Based game/tilemap.py	/^    def render(self, surface):$/;"	kind:member	line:31
+make_map	../Tile-Based game/tilemap.py	/^    def make_map(self):$/;"	kind:member	line:42
+Camera	../Tile-Based game/tilemap.py	/^class Camera:$/;"	kind:class	line:48
+__init__	../Tile-Based game/tilemap.py	/^    def __init__(self, width, height):$/;"	kind:member	line:49
+apply	../Tile-Based game/tilemap.py	/^    def apply(self, entity):$/;"	kind:member	line:54
+apply_rect	../Tile-Based game/tilemap.py	/^    def apply_rect(self, rect):$/;"	kind:member	line:57
+update	../Tile-Based game/tilemap.py	/^    def update(self, target):$/;"	kind:member	line:60
