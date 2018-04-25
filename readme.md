@@ -55,11 +55,12 @@ These games are examples of games to make.
 - a little searching
 - pygame Group has()
 - pygame groups again
-- pygame LayeredUpdates(), _layer
+- pygame LayeredUpdates(), *_layer*
 - python conventions (underscore before a class variable is the convention for "private")
 - pixel perfect collisions / Masks (more computing power)
 
-# Title-Based Survival game
+# Title-Based Survival game (Hard)
+
 ## **Things to Learn**
 - parameter defaulting
 - pygame.key.set_repeat(s,d)
@@ -72,6 +73,8 @@ These games are examples of games to make.
 - trigonometry
 - vectors
 - isinstance()
+- making maps in Tiled
+- pytmx module
 
 ___
 ### Games to make
@@ -82,3 +85,5 @@ ___
 - [ ] survival game (bird eye and profile)
 - [ ] the game of life
 - [ ] 2048
+- [ ] retro Mario
+- [ ] topdown racing
