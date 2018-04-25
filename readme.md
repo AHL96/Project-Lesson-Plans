@@ -59,7 +59,8 @@ These games are examples of games to make.
 - python conventions (underscore before a class variable is the convention for "private")
 - pixel perfect collisions / Masks (more computing power)
 
-# Title-Based Survival game (Hard)
+# Title-Based Survival game
+**only to be used to show what pygame can make**
 
 ## **Things to Learn**
 - parameter defaulting

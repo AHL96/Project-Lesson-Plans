@@ -50,9 +50,13 @@ class Game:
             path.join(img_folder, BULLET_IMG)).convert_alpha()
         self.mob_img = pg.image.load(
             path.join(img_folder, MOB_IMG)).convert_alpha()
+        self.gun_flashes = []
+        for img in MUZZLE_FLASHES:
+            self.gun_flashes.append(pg.image.load(
+                path.join(img_folder, img)).convert_alpha())
 
     def new(self):
-        self.all_sprites = pg.sprite.Group()
+        self.all_sprites = pg.sprite.LayeredUpdates()
         self.walls = pg.sprite.Group()
         self.mobs = pg.sprite.Group()
         self.bullets = pg.sprite.Group()

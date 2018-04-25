@@ -43,9 +43,21 @@ BULLET_HIT_RECT = pg.Rect(0, 0, 20, 20)
 
 # Mob settings
 MOB_IMG = 'zombie1_hold.png'
-MOB_SPEED = 150
+MOB_SPEEDS = [150, 100, 75, 125]
 MOB_HIT_RECT = pg.Rect(0, 0, 30, 30)
 MOB_HEALTH = 100
 MOB_DAMAGE = 10
 MOB_KNOCKBACK = 20
 AVOID_RADIUS = 50
+
+
+# Effects
+MUZZLE_FLASHES = ['whitePuff15.png', 'whitePuff16.png',
+                  'whitePuff17.png', 'whitePuff18.png']
+FLASH_DURATION = 40
+
+# Layers
+PLAYER_LAYER = 1
+BULLET_LAYER = 2
+MOB_LAYER = 1
+EFFECTS_LAYER = 3
