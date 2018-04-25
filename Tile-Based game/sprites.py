@@ -6,8 +6,8 @@ from tilemap import collide_hit_rect
 vec = pg.math.Vector2
 
 
-def collide_with_walls(sprite, group, dir):
-    if dir == 'x':
+def collide_with_walls(sprite, group, direction):
+    if direction == 'x':
         hits = pg.sprite.spritecollide(sprite, group, False, collide_hit_rect)
         if hits:
             if hits[0].rect.centerx > sprite.hit_rect.centerx:
@@ -17,7 +17,7 @@ def collide_with_walls(sprite, group, dir):
             sprite.vel.x = 0
             sprite.hit_rect.centerx = sprite.pos.x
 
-    if dir == 'y':
+    if direction == 'y':
         hits = pg.sprite.spritecollide(sprite, group, False, collide_hit_rect)
         if hits:
             if hits[0].rect.centery > sprite.hit_rect.centery:
@@ -61,9 +61,9 @@ class Player(pg.sprite.Sprite):
             now = pg.time.get_ticks()
             if now - self.last_shot > BULLET_RATE:
                 self.last_shot = now
-                dir = vec(1, 0).rotate(-self.rot)
+                direction = vec(1, 0).rotate(-self.rot)
                 pos = self.pos + BARREL_OFFSET.rotate(-self.rot)
-                Bullet(self.game, pos, dir)
+                Bullet(self.game, pos, direction)
                 self.vel = vec(-KICKBACK, 0).rotate(-self.rot)
                 MuzzleFlash(self.game, pos)
 
@@ -163,18 +163,6 @@ class Mob(pg.sprite.Sprite):
         self.health_bar = pg.Rect(0, 0, width, 7)
         if self.health < MOB_HEALTH:
             pg.draw.rect(self.image, col, self.health_bar)
-
-
-# class Wall(pg.sprite.Sprite):
-#         self.groups = game.all_sprites, game.walls
-#         pg.sprite.Sprite.__init__(self, self.groups)
-#         self.game = game
-#         self.image = pg.Surface((TILESIZE, TILESIZE))
-#         self.image.fill(GREEN)
-#         self.rect = self.image.get_rect()
-#         self.x = x
-#         self.y = y
-#         self.rect.x = x * TILESIZE
 
 
 class Obstacle(pg.sprite.Sprite):
