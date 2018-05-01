@@ -52,7 +52,7 @@ class Game:
         for img in MUZZLE_FLASHES:
             self.gun_flashes.append(pg.image.load(
                 path.join(img_folder, img)).convert_alpha())
-        self.item_images = {}
+        # self.item_images = {}
         # for item in ITEM_IMAGES:
         #     self.item_images[item] = pg.image.load(
         #         path.join(img_folder, ITEM_IMAGES[item])).convert_alpha()
@@ -128,12 +128,16 @@ class Game:
         # self.draw_grid()
         # self.all_sprites.draw(self.screen)
         for sprite in self.all_sprites:
+
             if isinstance(sprite, Mob):
                 sprite.draw_health()
+
             self.screen.blit(sprite.image, self.camera.apply(sprite))
+
             if self.draw_debug:
                 pg.draw.rect(self.screen, CYAN,
                              self.camera.apply_rect(sprite.hit_rect), 1)
+
         if self.draw_debug:
             for wall in self.walls:
                 pg.draw.rect(self.screen, CYAN,

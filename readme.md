@@ -43,7 +43,7 @@ These games are examples of games to make.
 - basic terminal usage
 
 
-# Platformer (~525 lines)
+# Platform Jumper (~525 lines)
 
 ## **Things to Learn**
 - *Math equations* (basic laws of motion; velocity, acceleration, gravity, friction)
@@ -88,3 +88,4 @@ ___
 - [ ] 2048
 - [ ] retro Mario
 - [ ] topdown racing
+- [ ] color wheel
