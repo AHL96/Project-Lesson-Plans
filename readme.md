@@ -1,4 +1,4 @@
-# Lessons for students
+# Pygame Projects & Lesson plans
 
 These games are examples of games to make.
 
@@ -88,4 +88,6 @@ ___
 - [ ] 2048
 - [ ] retro Mario
 - [ ] topdown racing
-- [ ] color wheel
+- [ ] color switch
+- [ ] Pac-man
+- [ ] Agar.io
