@@ -44,6 +44,7 @@ WEAPONS['pistol'] = {
     'size': 'lg',
     'bullet_count': 1
 }
+
 WEAPONS['shotgun'] = {
     'bullet_speed': 400,
     'bullet_lifetime': 500,
