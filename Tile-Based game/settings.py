@@ -80,6 +80,7 @@ MUZZLE_FLASHES = ['whitePuff15.png', 'whitePuff16.png',
                   'whitePuff17.png', 'whitePuff18.png']
 SPLAT = 'splat_green.png'
 FLASH_DURATION = 40
+DAMAGE_ALPHA = [i for i in range(0, 255, 25)]
 
 # Layers
 ITEM_LAYER = 1
@@ -90,7 +91,8 @@ EFFECTS_LAYER = 4
 
 # Items
 ITEM_IMAGES = {
-    'health': 'heath_pack.png'
+    'health': 'heath_pack.png',
+    'shotgun': 'shotgun.png'
 }
 HEALTH_PACK_AMOUNT = 20
 BOB_RANGE = 10
@@ -109,5 +111,6 @@ WEAPON_SOUNDS = {
 }
 EFFECTS_SOUNDS = {
     'level_start': 'level_start.wav',
-    'health_up': 'health_pack.wav'
+    'health_up': 'health_pack.wav',
+    'gun_pickup': 'gun_pickup.wav'
 }

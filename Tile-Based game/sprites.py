@@ -1,8 +1,9 @@
 import pygame as pg
-import random
+from random import uniform, choice, randint, random
 from settings import *
 from tilemap import collide_hit_rect
 import math
+from itertools import chain
 
 vec = pg.math.Vector2
 
@@ -48,6 +49,8 @@ class Player(pg.sprite.Sprite):
 
         self.weapon = 'pistol'
 
+        self.damaged = False
+
     def get_keys(self):
         self.rot_speed = 0
         self.vel = vec(0, 0)
@@ -72,19 +75,29 @@ class Player(pg.sprite.Sprite):
             self.vel = vec(-WEAPONS[self.weapon]
                            ['kickback'], 0).rotate(-self.rot)
             for i in range(WEAPONS[self.weapon]['bullet_count']):
-                spread = random.uniform(-WEAPONS[self.weapon]['spread'],
-                                        WEAPONS[self.weapon]['spread'])
+                spread = uniform(-WEAPONS[self.weapon]['spread'],
+                                 WEAPONS[self.weapon]['spread'])
                 Bullet(self.game, pos, direction.rotate(spread))
-                snd = random.choice(self.game.weapon_sounds[self.weapon])
+                snd = choice(self.game.weapon_sounds[self.weapon])
                 if snd.get_num_channels() > 2:
                     snd.stop()
                 snd.play()
             MuzzleFlash(self.game, pos)
 
+    def hit(self):
+        self.damaged = True
+        self.damage_alpha = chain(DAMAGE_ALPHA * 2)
+
     def update(self):
         self.get_keys()
         self.rot = (self.rot + self.rot_speed * self.game.dt) % 360
         self.image = pg.transform.rotate(self.game.player_img, self.rot)
+        if self.damaged:
+            try:
+                self.image.fill((255, 0, 0, next(self.damage_alpha)),
+                                special_flags=pg.BLEND_RGBA_MULT)
+            except:
+                self.damaged = False
         self.rect = self.image.get_rect()
         self.rect.center = self.pos
         self.pos += self.vel * self.game.dt
@@ -107,15 +120,15 @@ class Bullet(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         # self.image = game.bullet_img
-        self.image = game.bullet_images[WEAPONS[game.player.weapon]
-                                        ['size']]
+        self.image = game.bullet_images[WEAPONS[game.player.weapon]['size']]
         self.rect = self.image.get_rect()
         self.hit_rect = self.rect
         self.pos = vec(pos)
         self.rect.center = pos
-        # spread = random.uniform(-GUN_SPREAD, GUN_SPREAD)
+        # spread = uniform(-GUN_SPREAD, GUN_SPREAD)
         # self.vel = direction.rotate(spread) * BULLET_SPEED
-        self.vel = direction * WEAPONS[game.player.weapon]['bullet_speed']
+        self.vel = direction * \
+            WEAPONS[game.player.weapon]['bullet_speed'] * uniform(0.9, 1.1)
         self.spawn_time = pg.time.get_ticks()
 
     def update(self):
@@ -147,7 +160,7 @@ class Mob(pg.sprite.Sprite):
         self.rect.center = self.pos
         self.rot = 0
         self.health = MOB_HEALTH
-        self.speed = random.choice(MOB_SPEEDS)
+        self.speed = choice(MOB_SPEEDS)
         self.target = game.player
 
     def avoid_mobs(self):
@@ -160,8 +173,8 @@ class Mob(pg.sprite.Sprite):
     def update(self):
         target_dist = self.target.pos - self.pos
         if target_dist.length_squared() < DETECT_RADIUS**2:
-            if random.random() < 0.002:
-                random.choice(self.game.zombie_moan_sounds).play()
+            if random() < 0.002:
+                choice(self.game.zombie_moan_sounds).play()
             # self.rot = (self.game.player.pos - self.pos).angle_to(vec(1, 0))
             self.rot = target_dist.angle_to(vec(1, 0))
             self.image = pg.transform.rotate(self.game.mob_img, self.rot)
@@ -180,7 +193,7 @@ class Mob(pg.sprite.Sprite):
             self.rect.center = self.hit_rect.center
             # self.draw_health()
         if self.health <= 0:
-            random.choice(self.game.zombie_hit_sounds).play()
+            choice(self.game.zombie_hit_sounds).play()
             self.kill()
             self.game.map_img.blit(
                 self.game.splat, self.pos - vec(TILESIZE/2, TILESIZE/2))
@@ -217,9 +230,9 @@ class MuzzleFlash(pg.sprite.Sprite):
         self.groups = game.all_sprites
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        size = random.randint(20, 50)
+        size = randint(20, 50)
         self.image = pg.transform.scale(
-            random.choice(game.gun_flashes), (size, size))
+            choice(game.gun_flashes), (size, size))
         self.rect = self.image.get_rect()
         self.pos = pos
         self.rect.center = pos
