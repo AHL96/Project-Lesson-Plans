@@ -91,7 +91,7 @@ EFFECTS_LAYER = 4
 
 # Items
 ITEM_IMAGES = {
-    'health': 'heath_pack.png',
+    'health': 'health_pack.png',
     'shotgun': 'shotgun.png'
 }
 HEALTH_PACK_AMOUNT = 20

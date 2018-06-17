@@ -78,6 +78,9 @@ class Game:
             self.gun_flashes.append(pg.image.load(
                 path.join(img_folder, img)).convert_alpha())
 
+        self.item_images = {}
+        for item in ITEM_IMAGES:
+            self.item_images[item] = pg.image.load(path.join(img_folder,ITEM_IMAGES[item])).convert_alpha()
         # load background music
         pg.mixer.music.load(path.join(music_folder, BG_MUSIC))
 

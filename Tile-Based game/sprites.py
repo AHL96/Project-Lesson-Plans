@@ -249,8 +249,9 @@ class Item(pg.sprite.Sprite):
         self.groups = game.all_sprites, game.items
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.image = pg.Surface((20, 20))
-        self.image.fill(RED)
+        # self.image = pg.Surface((20, 20))
+        # self.image.fill(RED)
+        self.image = game.item_images[t]
         self.rect = self.image.get_rect()
         self.type = t
         self.pos = pos
