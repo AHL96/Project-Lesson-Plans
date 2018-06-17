@@ -33,13 +33,35 @@ PLAYER_HEALTH = 100
 
 # Gun settings
 BULLET_IMG = 'bullet.png'
-BULLET_SPEED = 500
-BULLET_LIFETIME = 1000
-BULLET_RATE = 150
-KICKBACK = 200
-GUN_SPREAD = 5
-BULLET_DAMAGE = 10
-BULLET_HIT_RECT = pg.Rect(0, 0, 20, 20)
+WEAPONS = {}
+WEAPONS['pistol'] = {
+    'bullet_speed': 500,
+    'bullet_lifetime': 1000,
+    'fire_rate': 150,
+    'kickback': 200,
+    'spread': 5,
+    'damage': 10,
+    'size': 'lg',
+    'bullet_count': 1
+}
+WEAPONS['shotgun'] = {
+    'bullet_speed': 400,
+    'bullet_lifetime': 500,
+    'fire_rate': 900,
+    'kickback': 300,
+    'spread': 20,
+    'damage': 5,
+    'size': 'sm',
+    'bullet_count': 12
+}
+
+# BULLET_SPEED = 500
+# BULLET_LIFETIME = 1000
+# BULLET_RATE = 150
+# KICKBACK = 200
+# GUN_SPREAD = 5
+# BULLET_DAMAGE = 10
+# BULLET_HIT_RECT = pg.Rect(0, 0, 20, 20)
 
 # Mob settings
 MOB_IMG = 'zombie1_hold.png'
@@ -55,6 +77,7 @@ DETECT_RADIUS = 400
 # Effects
 MUZZLE_FLASHES = ['whitePuff15.png', 'whitePuff16.png',
                   'whitePuff17.png', 'whitePuff18.png']
+SPLAT = 'splat_green.png'
 FLASH_DURATION = 40
 
 # Layers
@@ -79,7 +102,10 @@ PLAYER_HIT_SOUNDS = ['pain/8.wav', 'pain/9.wav', 'pain/10.wav',
 ZOMBIE_MOAN_SOUNDS = ['brains2.wav', 'brains3.wav',
                       'zombie-roar-1.wav', 'zombie-roar-7.wav']
 ZOMBIE_HIT_SOUNDS = ['splat-15.wav']
-WEAPON_SOUNDS_GUN = ['sfx_weapon_singleshot2.wav']
+WEAPON_SOUNDS = {
+    'pistol': ['pistol.wav'],
+    'shotgun': ['shotgun.wav']
+}
 EFFECTS_SOUNDS = {
     'level_start': 'level_start.wav',
     'health_up': 'health_pack.wav'

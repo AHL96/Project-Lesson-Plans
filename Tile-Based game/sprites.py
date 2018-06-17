@@ -165,6 +165,8 @@ class Mob(pg.sprite.Sprite):
         if self.health <= 0:
             random.choice(self.game.zombie_hit_sounds).play()
             self.kill()
+            self.game.map_img.blit(
+                self.game.splat, self.pos - vec(TILESIZE/2, TILESIZE/2))
 
     def draw_health(self):
         if self.health > 60:
