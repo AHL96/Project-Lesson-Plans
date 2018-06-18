@@ -47,17 +47,13 @@ class Game:
         snd_folder = path.join(game_folder, 'sounds')
         effect_folder = path.join(snd_folder, 'snd')
         music_folder = path.join(snd_folder, 'music')
-        map_folder = path.join(game_folder, 'maps')
+        self.map_folder = path.join(game_folder, 'maps')
 
         # get font
         self.title_font = path.join(img_folder, 'ZOMBIE.TTF')
+        self.hud_font = path.join(img_folder, 'Impacted2.0.ttf')
         self.dim_screen = pg.Surface(self.screen.get_size()).convert_alpha()
         self.dim_screen.fill((0, 0, 0, 180))
-
-        # get map
-        self.map = TiledMap(path.join(map_folder, 'level1.tmx'))
-        self.map_img = self.map.make_map()
-        self.map_rect = self.map_img.get_rect()
 
         self.player_img = pg.image.load(
             path.join(img_folder, PLAYER_IMG)).convert_alpha()
@@ -80,7 +76,8 @@ class Game:
 
         self.item_images = {}
         for item in ITEM_IMAGES:
-            self.item_images[item] = pg.image.load(path.join(img_folder,ITEM_IMAGES[item])).convert_alpha()
+            self.item_images[item] = pg.image.load(
+                path.join(img_folder, ITEM_IMAGES[item])).convert_alpha()
         # load background music
         pg.mixer.music.load(path.join(music_folder, BG_MUSIC))
 
@@ -130,6 +127,12 @@ class Game:
         self.mobs = pg.sprite.Group()
         self.bullets = pg.sprite.Group()
         self.items = pg.sprite.Group()
+
+        # get map
+        self.map = TiledMap(path.join(self.map_folder, 'level1.tmx'))
+        self.map_img = self.map.make_map()
+        self.map_rect = self.map_img.get_rect()
+
         for tile_object in self.map.tmxdata.objects:
             obj_center = vec(tile_object.x + tile_object.width / 2,
                              tile_object.y + tile_object.height / 2)
@@ -164,6 +167,10 @@ class Game:
     def update(self):
         self.all_sprites.update()
         self.camera.update(self.player)
+
+        if len(self.mobs) == 0:
+            self.playing = False
+
         # player hits items
         hits = pg.sprite.spritecollide(self.player, self.items, False)
         for hit in hits:
@@ -229,6 +236,8 @@ class Game:
 
         draw_player_health(self.screen, 10, 10,
                            self.player.health / PLAYER_HEALTH)
+        self.draw_text('Zombies {}'.format(len(self.mobs)),
+                       self.hud_font, 30, WHITE, WIDTH-10, 10, align='ne')
 
         if self.paused:
             self.screen.blit(self.dim_screen, (0, 0))
@@ -252,7 +261,25 @@ class Game:
         pass
 
     def show_go_screen(self):
-        pass
+        self.screen.fill(BLACK)
+        self.draw_text('GAME OVER', self.title_font, 100,
+                       RED, WIDTH/2, HEIGHT/2, align='center')
+        self.draw_text('Press a key to start', self.title_font, 75,
+                       WHITE, WIDTH/2, HEIGHT * 3/4, align='center')
+        pg.display.flip()
+        self.wait_for_key()
+
+    def wait_for_key(self):
+        pg.event.wait()
+        waiting = True
+        while waiting:
+            self.clock.tick(FPS)
+            for event in pg.event.get():
+                if event.type == pg.QUIT:
+                    waiting = False
+                    self.quit()
+                if event.type == pg.KEYUP:
+                    waiting = False
 
     def draw_text(self, text, font_name, size, color, x, y, align='nw'):
         font = pg.font.Font(font_name, size)
