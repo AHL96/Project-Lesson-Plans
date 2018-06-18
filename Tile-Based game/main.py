@@ -78,6 +78,15 @@ class Game:
         for item in ITEM_IMAGES:
             self.item_images[item] = pg.image.load(
                 path.join(img_folder, ITEM_IMAGES[item])).convert_alpha()
+
+        # lighting effect
+        self.fog = pg.Surface((WIDTH, HEIGHT))
+        self.fog.fill(NIGHT_COLOR)
+        self.light_mask = pg.image.load(
+            path.join(img_folder, LIGHT_MASK)).convert_alpha()
+        self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS)
+        self.light_rect = self.light_mask.get_rect()
+
         # load background music
         pg.mixer.music.load(path.join(music_folder, BG_MUSIC))
 
@@ -148,6 +157,7 @@ class Game:
         self.camera = Camera(self.map.width, self.map.height)
         self.draw_debug = False
         self.paused = False
+        self.night = True
         self.effect_sounds['level_start'].play()
 
     def run(self):
@@ -196,17 +206,24 @@ class Game:
             self.player.pos += vec(MOB_KNOCKBACK, 0).rotate(-hits[0].rot)
         # bullets hit mobs
         hits = pg.sprite.groupcollide(self.mobs, self.bullets, False, True)
-        for hit in hits:
-            # hit.health -= BULLET_DAMAGE
-            hit.health -= WEAPONS[self.player.weapon]['damage'] * \
-                len(hits[hit])
-            hit.vel = vec(0, 0)
+        for mob in hits:
+            # mob.health -= BULLET_DAMAGE
+            # mob.health -= WEAPONS[self.player.weapon]['damage']*len(hits[mob])
+            for bullet in hits[mob]:
+                mob.health -= bullet.damage
+            mob.vel = vec(0, 0)
 
     def draw_grid(self):
         for x in range(0, WIDTH, TILESIZE):
             pg.draw.line(self.screen, LIGHTGREY, (x, 0), (x, HEIGHT))
         for y in range(0, HEIGHT, TILESIZE):
             pg.draw.line(self.screen, LIGHTGREY, (0, y), (WIDTH, y))
+
+    def render_fog(self):
+        self.fog.fill(NIGHT_COLOR)
+        self.light_rect.center = self.camera.apply(self.player).center
+        self.fog.blit(self.light_mask, self.light_rect)
+        self.screen.blit(self.fog, (0, 0), special_flags=pg.BLEND_MULT)
 
     def draw(self):
         pg.display.set_caption('{:.2f}'.format(self.clock.get_fps()))
@@ -234,6 +251,9 @@ class Game:
         # for b in self.bullets:
             # pg.draw.rect(self.screen, WHITE, self.camera.apply(b), 2)
 
+        if self.night:
+            self.render_fog()
+
         draw_player_health(self.screen, 10, 10,
                            self.player.health / PLAYER_HEALTH)
         self.draw_text('Zombies {}'.format(len(self.mobs)),
@@ -256,6 +276,8 @@ class Game:
                     self.draw_debug = not self.draw_debug
                 if event.key == pg.K_p:
                     self.paused = not self.paused
+                if event.key == pg.K_n:
+                    self.night = not self.night
 
     def show_start_screen(self):
         pass

@@ -48,12 +48,12 @@ WEAPONS['pistol'] = {
 WEAPONS['shotgun'] = {
     'bullet_speed': 400,
     'bullet_lifetime': 500,
-    'fire_rate': 900,
+    'fire_rate': 1000,
     'kickback': 300,
-    'spread': 20,
+    'spread': 10,
     'damage': 5,
     'size': 'sm',
-    'bullet_count': 12
+    'bullet_count': 20
 }
 
 # BULLET_SPEED = 500
@@ -81,6 +81,9 @@ MUZZLE_FLASHES = ['whitePuff15.png', 'whitePuff16.png',
 SPLAT = 'splat_green.png'
 FLASH_DURATION = 40
 DAMAGE_ALPHA = [i for i in range(0, 255, 25)]
+NIGHT_COLOR = (20, 20, 20)
+LIGHT_RADIUS = (500, 500)
+LIGHT_MASK = 'light_350_med.png'
 
 # Layers
 ITEM_LAYER = 1

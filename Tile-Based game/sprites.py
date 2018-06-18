@@ -77,7 +77,8 @@ class Player(pg.sprite.Sprite):
             for i in range(WEAPONS[self.weapon]['bullet_count']):
                 spread = uniform(-WEAPONS[self.weapon]['spread'],
                                  WEAPONS[self.weapon]['spread'])
-                Bullet(self.game, pos, direction.rotate(spread))
+                Bullet(self.game, pos, direction.rotate(
+                    spread), WEAPONS[self.weapon]['damage'])
                 snd = choice(self.game.weapon_sounds[self.weapon])
                 if snd.get_num_channels() > 2:
                     snd.stop()
@@ -114,7 +115,7 @@ class Player(pg.sprite.Sprite):
 
 
 class Bullet(pg.sprite.Sprite):
-    def __init__(self, game, pos, direction):
+    def __init__(self, game, pos, direction, damage):
         self._layer = BULLET_LAYER
         self.groups = game.all_sprites, game.bullets
         pg.sprite.Sprite.__init__(self, self.groups)
@@ -130,6 +131,7 @@ class Bullet(pg.sprite.Sprite):
         self.vel = direction * \
             WEAPONS[game.player.weapon]['bullet_speed'] * uniform(0.9, 1.1)
         self.spawn_time = pg.time.get_ticks()
+        self.damage = damage
 
     def update(self):
 
