@@ -62,6 +62,8 @@ class Game:
             path.join(img_folder, BULLET_IMG)).convert_alpha()
         self.bullet_images['sm'] = pg.transform.scale(
             self.bullet_images['lg'], (10, 10))
+        self.bullet_images['xl'] = pg.transform.scale(
+            self.bullet_images['lg'], (25, 25))
         self.mob_img = pg.image.load(
             path.join(img_folder, MOB_IMG)).convert_alpha()
         self.splat = pg.image.load(
@@ -152,7 +154,7 @@ class Game:
             if tile_object.name == 'wall':
                 Tile(self, tile_object.x, tile_object.y,
                      tile_object.width, tile_object.height)
-            if tile_object.name in ['health', 'shotgun']:
+            if tile_object.name in ITEM_IMAGES.keys():
                 Item(self, obj_center, tile_object.name)
         self.camera = Camera(self.map.width, self.map.height)
         self.draw_debug = False
@@ -188,10 +190,14 @@ class Game:
                 hit.kill()
                 self.effect_sounds['health_up'].play()
                 self.player.add_health(HEALTH_PACK_AMOUNT)
-            if hit.type == 'shotgun':
-                hit.kill()
+            if hit.type == 'shotgun'and self.player.weapon != 'shotgun':
+                # hit.kill()
                 self.effect_sounds['gun_pickup'].play()
                 self.player.weapon = 'shotgun'
+            if hit.type == 'sniper' and self.player.weapon != 'sniper':
+                # hit.kill()
+                self.effect_sounds['gun_pickup'].play()
+                self.player.weapon = 'sniper'
         # mobs hit player
         hits = pg.sprite.spritecollide(
             self.player, self.mobs, False, collide_hit_rect)
