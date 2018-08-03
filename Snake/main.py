@@ -17,9 +17,12 @@ class Game:
     def new(self):
         self.all_sprites = pygame.sprite.Group()
         self.parts = pygame.sprite.Group()
+        self.foods = pygame.sprite.Group()
 
-        self.snake = Snake(self, WIDTH/2, HEIGHT/2)
-        # self.part = Part(self, WIDTH/2, HEIGHT/2)
+        self.snake = Snake(self, WIDTH//2, HEIGHT//2)
+
+        for i in range(10):
+            Food(self)
 
         self.run()
 
