@@ -1,6 +1,6 @@
 
-WIDTH = 400
-HEIGHT = 400
+WIDTH = 700
+HEIGHT = 700
 FPS = 10
 
 
