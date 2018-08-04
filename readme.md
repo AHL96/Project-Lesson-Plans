@@ -81,7 +81,7 @@ ___
 ### Games to make
 
 - [ ] flappy bird
-- [ ] snake
+- [x] snake
 - [ ] sudoko
 - [ ] survival game (bird eye and profile)
 - [ ] the game of life
