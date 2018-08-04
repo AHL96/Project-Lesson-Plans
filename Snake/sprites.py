@@ -3,33 +3,6 @@ from settings import *
 from random import randint, choice
 
 
-# class Food(pygame.sprite.Sprite):
-#     def __init__(self, game):
-#         self.groups = game.all_sprites, game.foods
-#         pygame.sprite.Sprite.__init__(self, self.groups)
-#         self.image = pygame.Surface((PARTSIZE-1, PARTSIZE-1))
-#         self.image.fill(FOODCOLOR)
-
-#         self.rect = self.image.get_rect()
-
-#         self.rect.x = randint(0, WIDTH//PARTSIZE) * PARTSIZE + 1
-#         self.rect.y = randint(0, HEIGHT//PARTSIZE) * PARTSIZE + 1
-
-
-# class Part(pygame.sprite.Sprite):
-#     def __init__(self, game, x, y):
-#         self.groups = game.all_sprites, game.parts
-#         pygame.sprite.Sprite.__init__(self, self.groups)
-#         self.image = pygame.Surface((PARTSIZE-1, PARTSIZE-1))
-#         self.image.fill(SNAKECOLOR)
-
-#         self.rect = self.image.get_rect()
-#         self.rect.x = x+1
-#         self.rect.y = y+1
-
-#         self.game = game
-
-
 class Cell(pygame.sprite.Sprite):
     def __init__(self, game, t, x, y):
         self.groups = game.all_sprites, game.cells
@@ -54,7 +27,6 @@ class Cell(pygame.sprite.Sprite):
 
 class Snake:
     def __init__(self, game, x, y):
-        # self.body = [Part(game, PARTSIZE+x, y)]
         self.body = [Cell(game, 'part', PARTSIZE+x, y)]
         self.size = len(self.body)
 
@@ -74,7 +46,6 @@ class Snake:
         self.y += self.dir[1] * PARTSIZE
         part = self.body.pop(0)
         part.kill()
-        # self.body.append(Part(self.game, 'part', self.x, self.y))
         self.body.append(Cell(self.game, 'part', self.x, self.y))
 
         # player controls
@@ -87,13 +58,6 @@ class Snake:
             self.dir = (0, 1)
         if keystate[pygame.K_LEFT] and self.dir != (1, 0):
             self.dir = (-1, 0)
-
-        # gets food
-        # hits = pygame.sprite.groupcollide(
-        #     self.game.foods, self.game.parts, True, False)
-        # if hits:
-        #     for hit in hits:
-        #         self.body.append(Cell(self.game, 'part', self.x, self.y))
 
         head = self.body[-1]
         self.game.cells.remove(self.body[-1])
@@ -109,6 +73,5 @@ class Snake:
         self.game.cells.add(head)
 
     def grow(self):
-        # self.body.append(Part(self.game, self.x, self.y))
         self.body.append(Cell(self.game, 'part', self.x, self.y))
         self.size = len(self.body)
