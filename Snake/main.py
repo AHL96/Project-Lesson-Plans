@@ -18,17 +18,22 @@ class Game:
         self.all_sprites = pygame.sprite.Group()
         self.parts = pygame.sprite.Group()
         self.foods = pygame.sprite.Group()
+        self.cells = pygame.sprite.Group()
 
         self.snake = Snake(self, WIDTH//2, HEIGHT//2)
 
-        for i in range(10):
-            Food(self)
+        for i in range(25):
+            # Food(self)
+            Cell(self, 'food',
+                 randint(0, WIDTH//PARTSIZE) * PARTSIZE,
+                 randint(0, HEIGHT//PARTSIZE) * PARTSIZE
+                 )
 
         self.run()
 
     def run(self):
         self.playing = True
-        while self.playing:
+        while self.playing and self.snake.alive:
             self.clock.tick(FPS)
             self.events()
             self.update()

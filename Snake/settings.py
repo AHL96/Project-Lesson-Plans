@@ -1,6 +1,6 @@
 
-WIDTH = 500
-HEIGHT = 500
+WIDTH = 400
+HEIGHT = 400
 FPS = 10
 
 
@@ -15,3 +15,14 @@ FOODCOLOR = GREEN
 SNAKECOLOR = RED
 
 PARTSIZE = 20
+
+
+cell = {}
+
+cell['part'] = {
+    'color': SNAKECOLOR
+}
+
+cell['food'] = {
+    'color': FOODCOLOR
+}
