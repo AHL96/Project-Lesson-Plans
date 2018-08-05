@@ -10,19 +10,9 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
-BACKGROUND = (50, 100, 100)
-FOODCOLOR = GREEN
-SNAKECOLOR = RED
+BACKGROUND = (150, 200, 250)
+FOODCOLOR = (50, 90, 50)
+SNAKE1COLOR = (250, 250, 150)
+SNAKE2COLOR = (250, 135, 65)
 
 PARTSIZE = 20
-
-
-cell = {}
-
-cell['part'] = {
-    'color': SNAKECOLOR
-}
-
-cell['food'] = {
-    'color': FOODCOLOR
-}

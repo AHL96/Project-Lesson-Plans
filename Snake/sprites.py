@@ -4,14 +4,14 @@ from random import randint, choice
 
 
 class Cell(pygame.sprite.Sprite):
-    def __init__(self, game, t, x, y):
+    def __init__(self, game, t, color, x, y):
         self.groups = game.all_sprites, game.cells
         pygame.sprite.Sprite.__init__(self, self.groups)
 
         self.type = t
 
         self.image = pygame.Surface((PARTSIZE-1, PARTSIZE-1))
-        self.image.fill(cell[self.type]['color'])
+        self.image.fill(color)
 
         self.rect = self.image.get_rect()
         self.rect.x = x+1
@@ -21,8 +21,8 @@ class Cell(pygame.sprite.Sprite):
 
 
 class Snake:
-    def __init__(self, game, x, y, dir=(1, 0)):
-        self.body = [Cell(game, 'part', i*PARTSIZE+x, y) for i in range(1)]
+    def __init__(self, game, color, x, y, dir=(1, 0)):
+        self.body = [Cell(game, 'part', color, PARTSIZE+x, y)]
         self.size = len(self.body)
 
         self.game = game
@@ -31,6 +31,7 @@ class Snake:
         self.x = x
         self.y = y
 
+        self.color = color
         self.alive = True
 
     def update(self):
@@ -52,7 +53,7 @@ class Snake:
 
         part = self.body.pop(0)
         part.kill()
-        self.body.append(Cell(self.game, 'part', self.x, self.y))
+        self.body.append(Cell(self.game, 'part', self.color, self.x, self.y))
 
         head = self.body[-1]
         self.game.cells.remove(self.body[-1])
@@ -61,8 +62,10 @@ class Snake:
             for hit in hits:
                 if hit.type == 'food':
                     hit.kill()
-                    self.body.append(Cell(self.game, 'part', self.x, self.y))
+                    self.body.append(
+                        Cell(self.game, 'part', self.color, self.x, self.y))
                     Cell(self.game, 'food',
+                         FOODCOLOR,
                          randint(0, WIDTH//PARTSIZE) * PARTSIZE,
                          randint(0, HEIGHT//PARTSIZE) * PARTSIZE
                          )
@@ -71,12 +74,13 @@ class Snake:
                     # print('dead')
                     for part in self.body:
                         part.kill()
-                    self.__init__(self.game, self.x, self.y, self.dir)
+                    self.__init__(self.game, self.color,
+                                  self.x, self.y, self.dir)
 
         self.game.cells.add(head)
 
     def grow(self):
-        self.body.append(Cell(self.game, 'part', self.x, self.y))
+        self.body.append(Cell(self.game, 'part', self.color, self.x, self.y))
         self.size = len(self.body)
 
     def direction(self, x, y):

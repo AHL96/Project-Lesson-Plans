@@ -19,15 +19,15 @@ class Game:
         self.all_sprites = pygame.sprite.Group()
         self.cells = pygame.sprite.Group()
 
-        self.snake1 = Snake(self, 0, 0)
+        self.snake1 = Snake(self, SNAKE1COLOR, 0, 0)
         #    randint(0, WIDTH//PARTSIZE) * PARTSIZE,
         #    randint(0, HEIGHT//PARTSIZE) * PARTSIZE
         #    )
-        self.snake2 = Snake(self, WIDTH-PARTSIZE, HEIGHT-PARTSIZE)
+        self.snake2 = Snake(self, SNAKE2COLOR, WIDTH-PARTSIZE, HEIGHT-PARTSIZE)
 
         for i in range(100):
             # Food(self)
-            Cell(self, 'food',
+            Cell(self, 'food', FOODCOLOR,
                  randint(0, WIDTH//PARTSIZE) * PARTSIZE,
                  randint(0, HEIGHT//PARTSIZE) * PARTSIZE
                  )
@@ -82,9 +82,9 @@ class Game:
         self.screen.fill(BACKGROUND)
         self.draw_grid()
         self.all_sprites.draw(self.screen)
-        self.draw_text(str(len(self.snake1.body)), 16, WHITE,
+        self.draw_text(str(len(self.snake1.body)), 16, BLACK,
                        self.snake1.x+PARTSIZE/2, self.snake1.y+PARTSIZE/2)
-        self.draw_text(str(len(self.snake2.body)), 16, WHITE,
+        self.draw_text(str(len(self.snake2.body)), 16, BLACK,
                        self.snake2.x+PARTSIZE/2, self.snake2.y+PARTSIZE/2)
         pygame.display.flip()
 
