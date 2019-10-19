@@ -182,6 +182,7 @@ class Game:
 
         if len(self.mobs) == 0:
             self.playing = False
+            self.end_time = pg.time.get_ticks()
 
         # player hits items
         hits = pg.sprite.spritecollide(self.player, self.items, False)
@@ -190,7 +191,7 @@ class Game:
                 hit.kill()
                 self.effect_sounds['health_up'].play()
                 self.player.add_health(HEALTH_PACK_AMOUNT)
-            if hit.type == 'shotgun'and self.player.weapon != 'shotgun':
+            if hit.type == 'shotgun' and self.player.weapon != 'shotgun':
                 # hit.kill()
                 self.effect_sounds['gun_pickup'].play()
                 self.player.weapon = 'shotgun'
@@ -269,6 +270,8 @@ class Game:
             self.screen.blit(self.dim_screen, (0, 0))
             self.draw_text("Paused", self.title_font, 105, RED,
                            WIDTH/2, HEIGHT/2, align='center')
+            self.draw_text(f"Your time: {pg.time.get_ticks()//100}", self.hud_font,
+                           20, WHITE, 10, HEIGHT * .95)
         pg.display.flip()
 
     def events(self):
@@ -284,6 +287,9 @@ class Game:
                     self.paused = not self.paused
                 if event.key == pg.K_n:
                     self.night = not self.night
+                # if event.key == pg.K_k:
+                #     for mob in self.mobs:
+                #         mob.health = 0
 
     def show_start_screen(self):
         pass
@@ -294,6 +300,9 @@ class Game:
                        RED, WIDTH/2, HEIGHT/2, align='center')
         self.draw_text('Press a key to start', self.title_font, 75,
                        WHITE, WIDTH/2, HEIGHT * 3/4, align='center')
+        if self.player.health > 0:
+            self.draw_text(f"Your time: {self.end_time//100}", self.hud_font,
+                           20, WHITE, 10, HEIGHT * .95)
         pg.display.flip()
         self.wait_for_key()
 

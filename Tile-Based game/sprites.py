@@ -95,8 +95,10 @@ class Player(pg.sprite.Sprite):
         self.image = pg.transform.rotate(self.game.player_img, self.rot)
         if self.damaged:
             try:
-                self.image.fill((255, 0, 0, next(self.damage_alpha)),
+                a = next(self.damage_alpha)
+                self.image.fill((255, 0, 0, a),
                                 special_flags=pg.BLEND_RGBA_MULT)
+                # print(a)
             except:
                 self.damaged = False
         self.rect = self.image.get_rect()
@@ -223,6 +225,7 @@ class Tile(pg.sprite.Sprite):
         self.y = y
         self.rect.x = x
         self.rect.y = y
+        self.hit_rect = self.rect
 
 
 class MuzzleFlash(pg.sprite.Sprite):
@@ -239,6 +242,7 @@ class MuzzleFlash(pg.sprite.Sprite):
         self.pos = pos
         self.rect.center = pos
         self.spawn_time = pg.time.get_ticks()
+        self.hit_rect = self.rect
 
     def update(self):
         if pg.time.get_ticks() - self.spawn_time > FLASH_DURATION:
@@ -259,6 +263,7 @@ class Item(pg.sprite.Sprite):
         self.pos = pos
         self.rect.center = pos
         self.step = 0
+        self.hit_rect = self.rect
 
     def update(self):
         # bobbing motion
